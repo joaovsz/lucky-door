@@ -1,0 +1,38 @@
+.caixa{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background: #b63c49;
+    margin:auto;
+}
+
+.tampa{
+    margin:auto;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 2;
+    width: 112px;
+    height: 20px;
+    background: #EF5261;
+}
+
+.lacoX{
+    z-index: 3;
+    margin: auto;
+    position: absolute;
+    width: 18px;
+    height: 100%;
+    background: #F6C863;
+}
+.lacoY{
+    z-index: 3;
+    margin: auto;
+    position: absolute;
+    top: 45%;
+    width: 100px;
+    height: 18px;
+    background: #F6C863;
+}
