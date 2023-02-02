@@ -8,4 +8,13 @@ export function createDoors(quantity: number, selected: number): DoorModel[] {
   });
 }
 
-export function attDoors(doors: DoorModel[]);
+export function attDoors(doors: DoorModel[], modifiedDoor: DoorModel): DoorModel[] {
+    return doors.map(doorAT=> {
+        const sameOfModified = doorAT.numero === modifiedDoor.numero
+        if (sameOfModified) {
+            return modifiedDoor
+        } else {
+            return modifiedDoor.isOpen ? doorAT: doorAT.desmarcar()
+        }
+    })
+};

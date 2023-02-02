@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DoorModel from "@/model/Door";
 import Door from "@/src/components/Door/Door";
-import { createDoors } from "@/functions/Doors";
+import { attDoors, createDoors } from "@/functions/Doors";
 
 const Game = () => {
   const [doors, setDoors] = useState(createDoors(3, 2));
@@ -9,12 +9,16 @@ const Game = () => {
   function renderDoors() {
     return doors.map((door) => {
       return (
-        <Door key={door.numero} door={door} onChange={console.log(doors)} />
+        <Door
+          key={door.numero}
+          door={door}
+          onChange={(newDoor) => setDoors(attDoors(doors, newDoor))}
+        />
       );
     });
   }
 
-  return <div style={{ display: "flex" }}></div>;
+  return <div style={{ display: "flex" }}>{renderDoors()}</div>;
 };
 
 export default Game;
