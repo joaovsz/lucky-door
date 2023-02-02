@@ -4,7 +4,7 @@ import Door from "@/src/components/Door/Door";
 import { attDoors, createDoors } from "@/functions/Doors";
 
 const Game = () => {
-  const [doors, setDoors] = useState(createDoors(3, 2));
+  const [doors, setDoors] = useState(createDoors(8, 2));
 
   function renderDoors() {
     return doors.map((door) => {

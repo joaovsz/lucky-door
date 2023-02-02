@@ -28,6 +28,9 @@ export default class DoorModel {
   get isOpen(): boolean {
     return this.#isOpen;
   }
+  get closed() {
+    return !this.isOpen;
+  }
   //Retornam novas Instâncias
   desmarcar() {
     const selected = false;

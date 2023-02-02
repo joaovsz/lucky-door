@@ -1,6 +1,7 @@
 import styles from "./Door.module.css";
 import React from "react";
 import DoorModel from "@/model/Door";
+import Gift from "../Gift/Gift";
 
 interface DoorProps {
   door: DoorModel;
@@ -30,7 +31,7 @@ const Porta = (props: DoorProps) => {
   return (
     <div className={styles.area} onClick={alternateSelection}>
       <div className={`${styles.structure} ${selected}`}>
-        {door.isOpen ? false : renderDoor()}
+        {door.closed ? renderDoor() : door.hasGift ? <Gift /> : false}
       </div>
       <div className={styles.base}></div>
     </div>
